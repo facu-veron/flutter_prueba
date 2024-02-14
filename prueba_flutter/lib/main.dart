@@ -3,6 +3,7 @@ import 'package:prueba_flutter/config/theme/app_theme.dart';
 // import 'package:prueba_flutter/screens/onboarding/onboarding_screen.dart';
 
 import 'package:prueba_flutter/screens/login/login_screen.dart';
+// import 'package:prueba_flutter/screens/table/paginated_datatable_screen.dart';
 //import 'package:prueba_flutter/screens/feeds/feed_screen.dart';
 
 void main() {
@@ -18,9 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       
       title: 'Flutter Demo',
-      theme: AppTheme(selectedColor:1).theme(),
-      
-      home: const SignInPage2(), 
+      theme: AppTheme(selectedColor:0).theme(),
+      // home: const Scaffold(body:  DataTableDemo())
+       home: const SignInPage2(), 
       //  home: const ConcentricAnimationOnboarding(), 
     );
   }
