@@ -46,7 +46,7 @@ class _Logo extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text(
-            "Inicia sesión",
+            "Crear cuenta",
             textAlign: TextAlign.center,
             style: isSmallScreen
                 ? Theme.of(context).textTheme.headlineSmall
@@ -70,7 +70,7 @@ class _FormContent extends StatefulWidget {
 
 class __FormContentState extends State<_FormContent> {
   bool _isPasswordVisible = false;
-  bool _rememberMe = false;
+  // bool _rememberMe = false;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -84,6 +84,30 @@ class __FormContentState extends State<_FormContent> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            TextFormField(
+              validator: (value) {
+                // add email validation
+                if (value == null || value.isEmpty) {
+                  return 'Por favor ingrese un nombre';
+                }
+
+                bool emailValid = RegExp(
+                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                    .hasMatch(value);
+                if (!emailValid) {
+                  return 'Por favor ingrese un correo electrónico válido';
+                }
+
+                return null;
+              },
+              decoration: const InputDecoration(
+                labelText: 'Nombre',
+                hintText: 'Ingrese un nombre',
+                prefixIcon: Icon(Icons.person_outlined),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            _gap(),
             TextFormField(
               validator: (value) {
                 // add email validation
@@ -122,7 +146,7 @@ class __FormContentState extends State<_FormContent> {
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
                   labelText: 'Contraseña',
-                  hintText: 'Ingrese su contraseña',
+                  hintText: 'Ingrese una contraseña',
                   prefixIcon: const Icon(Icons.lock_outline_rounded),
                   border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
@@ -137,7 +161,36 @@ class __FormContentState extends State<_FormContent> {
                   )),
             ),
             _gap(),
-            CheckboxListTile(
+              TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Por favor ingrese una contraseña válida';
+                }
+
+                if (value.length < 6) {
+                  return 'La contraseña debe tener al menos 6 caracteres';
+                }
+                return null;
+              },
+              obscureText: !_isPasswordVisible,
+              decoration: InputDecoration(
+                  labelText: 'Confirmar contraseña',
+                  hintText: 'Confirmarcontraseña',
+                  prefixIcon: const Icon(Icons.lock_outline_rounded),
+                  border: const OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    icon: Icon(_isPasswordVisible
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                    onPressed: () {
+                      setState(() {
+                        _isPasswordVisible = !_isPasswordVisible;
+                      });
+                    },
+                  )),
+            ),
+            _gap(),
+           /*  CheckboxListTile(
               value: _rememberMe,
               onChanged: (value) {
                 if (value == null) return;
@@ -149,7 +202,7 @@ class __FormContentState extends State<_FormContent> {
               controlAffinity: ListTileControlAffinity.leading,
               dense: true,
               contentPadding: const EdgeInsets.all(0),
-            ),
+            ), */
             _gap(),
             SizedBox(
               width: double.infinity,
@@ -161,7 +214,7 @@ class __FormContentState extends State<_FormContent> {
                 child: const Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Text(
-                    'Iniciar sesión',
+                    'Crear cuenta',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
