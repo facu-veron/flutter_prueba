@@ -4,13 +4,13 @@ import 'package:prueba_flutter/config/theme/app_theme.dart';
 
 // import 'package:prueba_flutter/screens/login/login_screen.dart';
 // import 'package:prueba_flutter/screens/sign-up/sign_up.dart';
-import 'package:prueba_flutter/screens/table/paginated_datatable_screen.dart';
+// import 'package:prueba_flutter/screens/table/paginated_datatable_screen.dart';
+import 'package:prueba_flutter/views/google_button_bar.dart';
 //import 'package:prueba_flutter/screens/feeds/feed_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       
       title: 'Flutter Demo',
       theme: AppTheme(selectedColor:5).theme(),
-      home: const Scaffold(body:  DataTableDemo())
-      //  home: const SignInPage2(), 
+      home: const Scaffold(body:  GoogleBottomBar())
+        // home: const SignInPage2(), 
       //  home: const ConcentricAnimationOnboarding(), 
     );
   }

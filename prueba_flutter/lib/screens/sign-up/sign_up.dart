@@ -8,7 +8,7 @@ class SignInPage2 extends StatelessWidget {
     final bool isSmallScreen = MediaQuery.of(context).size.width < 600;
 
     return Scaffold(
-        body: Center(
+        body: ListView(children: [Center(
             child: isSmallScreen
                 ? const Column(
                     mainAxisSize: MainAxisSize.min,
@@ -19,7 +19,7 @@ class SignInPage2 extends StatelessWidget {
                   )
                 : Container(
                     padding: const EdgeInsets.all(32.0),
-                    constraints: const BoxConstraints(maxWidth: 800),
+                    constraints: const BoxConstraints(maxWidth: 900),
                     child: const Row(
                       children: [
                         Expanded(child: _Logo()),
@@ -28,7 +28,9 @@ class SignInPage2 extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )));
+                  )
+                  )],)
+                  );
   }
 }
 
@@ -37,12 +39,15 @@ class _Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = MediaQuery.of(context).size.width < 700;
+    final bool isSmallScreen = MediaQuery.of(context).size.width < 650;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        /*  Image.asset('assets/logo.png', height: isSmallScreen ? 150 : 150), */
+       /*    Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset('assets/logo.png', height: isSmallScreen ? 100 : 80),
+          ),  */
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text(

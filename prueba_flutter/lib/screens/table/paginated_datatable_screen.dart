@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../data_sources.dart';
 
 // Copyright 2019 The Flutter team. All rights reserved.
@@ -112,67 +111,76 @@ class DataTableDemoState extends State<DataTableDemo> with RestorationMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(16),
-        child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
+    return 
+      
+        Padding(
+            padding: const EdgeInsets.all(30),
             child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                  sortColumnIndex: _sortColumnIndex.value,
-                  sortAscending: _sortAscending.value,
-                  onSelectAll: _dessertsDataSource.selectAll,
-                  columns: [
-                    DataColumn(
-                      label: const Text('Desert'),
-                      onSort: (columnIndex, ascending) =>
-                          _sort<String>((d) => d.name, columnIndex, ascending),
-                    ),
-                    DataColumn(
-                      label: const Text('Calories'),
-                      numeric: true,
-                      onSort: (columnIndex, ascending) =>
-                          _sort<num>((d) => d.calories, columnIndex, ascending),
-                    ),
-                    DataColumn(
-                      label: const Text('Fat (gm)'),
-                      numeric: true,
-                      onSort: (columnIndex, ascending) =>
-                          _sort<num>((d) => d.fat, columnIndex, ascending),
-                    ),
-                    DataColumn(
-                      label: const Text('Carbs (gm)'),
-                      numeric: true,
-                      onSort: (columnIndex, ascending) =>
-                          _sort<num>((d) => d.carbs, columnIndex, ascending),
-                    ),
-                    DataColumn(
-                      label: const Text('Protein (gm)'),
-                      numeric: true,
-                      onSort: (columnIndex, ascending) =>
-                          _sort<num>((d) => d.protein, columnIndex, ascending),
-                    ),
-                    DataColumn(
-                      label: const Text('Sodium (mg)'),
-                      numeric: true,
-                      onSort: (columnIndex, ascending) =>
-                          _sort<num>((d) => d.sodium, columnIndex, ascending),
-                    ),
-                    DataColumn(
-                      label: const Text('Calcium (%)'),
-                      numeric: true,
-                      onSort: (columnIndex, ascending) =>
-                          _sort<num>((d) => d.calcium, columnIndex, ascending),
-                    ),
-                    DataColumn(
-                      label: const Text('Iron (%)'),
-                      numeric: true,
-                      onSort: (columnIndex, ascending) =>
-                          _sort<num>((d) => d.iron, columnIndex, ascending),
-                    ),
-                  ],
-                  rows: List<DataRow>.generate(_dessertsDataSource.rowCount,
-                      (index) => _dessertsDataSource.getRow(index))),
-            )));
+                scrollDirection: Axis.vertical,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: DataTable(
+                      sortColumnIndex: _sortColumnIndex.value,
+                      sortAscending: _sortAscending.value,
+                      onSelectAll: _dessertsDataSource.selectAll,
+                      columns: [
+                        DataColumn(
+                          label: const Text('Desert'),
+                          onSort: (columnIndex, ascending) =>
+                              _sort<String>((d) => d.name, columnIndex, ascending),
+                        ),
+                        DataColumn(
+                          label: const Text('Calories'),
+                          numeric: true,
+                          onSort: (columnIndex, ascending) =>
+                              _sort<num>((d) => d.calories, columnIndex, ascending),
+                        ),
+                        DataColumn(
+                          label: const Text('Fat (gm)'),
+                          numeric: true,
+                          onSort: (columnIndex, ascending) =>
+                              _sort<num>((d) => d.fat, columnIndex, ascending),
+                        ),
+                        DataColumn(
+                          label: const Text('Carbs (gm)'),
+                          numeric: true,
+                          onSort: (columnIndex, ascending) =>
+                              _sort<num>((d) => d.carbs, columnIndex, ascending),
+                        ),
+                        DataColumn(
+                          label: const Text('Protein (gm)'),
+                          numeric: true,
+                          onSort: (columnIndex, ascending) =>
+                              _sort<num>((d) => d.protein, columnIndex, ascending),
+                        ),
+                        DataColumn(
+                          label: const Text('Sodium (mg)'),
+                          numeric: true,
+                          onSort: (columnIndex, ascending) =>
+                              _sort<num>((d) => d.sodium, columnIndex, ascending),
+                        ),
+                        DataColumn(
+                          label: const Text('Calcium (%)'),
+                          numeric: true,
+                          onSort: (columnIndex, ascending) =>
+                              _sort<num>((d) => d.calcium, columnIndex, ascending),
+                        ),
+                        DataColumn(
+                          label: const Text('Iron (%)'),
+                          numeric: true,
+                          onSort: (columnIndex, ascending) =>
+                              _sort<num>((d) => d.iron, columnIndex, ascending),
+                        ),
+                      ],
+                      
+                      rows: List<DataRow>.generate(_dessertsDataSource.rowCount,
+                          (index) => _dessertsDataSource.getRow(index))),
+                )
+                ),  
+                
+                );
+    
+    
+            
   }
 }
