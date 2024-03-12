@@ -20,11 +20,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       
       title: 'Flutter Demo',
-      theme: AppTheme(selectedColor:5).theme(),
-      home: const Scaffold(body:  GoogleBottomBar())
+      theme: AppTheme(selectedColor:1).theme(),
+      home: const Scaffold(body:  GoogleBottomBar(),
+      
+      
+      )
+      
         // home: const SignInPage2(), 
       //  home: const ConcentricAnimationOnboarding(), 
     );
+    
   }
 }
 

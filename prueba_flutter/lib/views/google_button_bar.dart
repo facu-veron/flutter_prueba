@@ -32,9 +32,9 @@ class _GoogleBottomBarState extends State<GoogleBottomBar> {
 
 final _navBarItems = [
   SalomonBottomBarItem(
-    icon: const Icon(Icons.home),
-    title: const Text("Home"),
-    selectedColor: Colors.purple,
+    icon: const Icon(Icons.table_chart_outlined),
+    title: const Text("Tabla"),
+   /*  selectedColor: Colors.purple, */
   ),
   SalomonBottomBarItem(
     icon: const Icon(Icons.favorite_border),
