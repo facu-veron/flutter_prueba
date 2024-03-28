@@ -34,21 +34,21 @@ final _navBarItems = [
   SalomonBottomBarItem(
     icon: const Icon(Icons.table_chart_outlined),
     title: const Text("Tabla"),
-   /*  selectedColor: Colors.purple, */
+    selectedColor: Colors.purple, 
   ),
   SalomonBottomBarItem(
-    icon: const Icon(Icons.favorite_border),
-    title: const Text("Likes"),
+    icon: const Icon(Icons.pending_actions_outlined),
+    title: const Text("Historial"),
     selectedColor: Colors.pink,
   ),
   SalomonBottomBarItem(
-    icon: const Icon(Icons.search),
-    title: const Text("Search"),
+    icon: const Icon(Icons.settings_outlined),
+    title: const Text("Configuración"),
     selectedColor: Colors.orange,
   ),
   SalomonBottomBarItem(
     icon: const Icon(Icons.person),
-    title: const Text("Profile"),
+    title: const Text("Perfil"),
     selectedColor: Colors.teal,
   ),
 ];

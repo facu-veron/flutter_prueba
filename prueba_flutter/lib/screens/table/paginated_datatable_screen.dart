@@ -175,9 +175,13 @@ class DataTableDemoState extends State<DataTableDemo> with RestorationMixin {
                       (index) => _dessertsDataSource.getRow(index))),
             )),
       ),
-      floatingActionButton: const FloatingActionButton(
-        onPressed: null,
-        child: Icon(Icons.add),
+      floatingActionButton: const Padding(
+        padding:  EdgeInsets.all(16.0),
+        child:  Opacity(opacity: 0.8, child:  FloatingActionButton(
+          onPressed: null,
+          
+          child: Icon(Icons.add),)
+        ),
       ),
     );
     
